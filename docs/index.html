@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urdu Text Summarization</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #20232A;
+            color: #61dafb;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #282c34;
+            padding: 1em;
+        }
+
+        nav h1 {
+            margin: 0;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        #main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1em;
+        }
+
+        h1 {
+            color: #61dafb;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        #project-info {
+            text-align: center;
+        }
+
+        #paragraph-block {
+            width: 80%;
+            padding: 1em;
+            margin-top: 1em;
+            background-color: #282c34;
+            border: 2px solid #61dafb;
+            border-radius: 10px;
+            transition: background-color 0.3s, border 0.3s;
+        }
+
+        .btn {
+            background-color: #282c34;
+            color: #61dafb;
+            padding: 0.5em 1em;
+            border: 2px solid #61dafb;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .btn:hover {
+            background-color: #61dafb;
+            color: #282c34;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 16px;
+            color: #61dafb;
+        }
+
+        textarea {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #61dafb;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        input[type="submit"] {
+            background-color: #20232A;
+            color: #61dafb;
+            padding: 10px 20px;
+            border: 2px solid #61dafb;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #61dafb;
+            color: #20232A;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h1>Urdu Text Summarization</h1>
+        <button class="btn" onclick="closeApp()">Quit</button>
+    </nav>
+
+    <div id="main-container">
+        <div id="project-info">
+            <h2>Submitted by:</h2>
+            <p>Labeeb Tariq (2021-SE-15) & Wali Muhammad Ahmad (2021-SE-39)</p>
+        </div>
+        <!-- Input Block -->
+        <div id="paragraph-block">
+            <form action="/process" method="post">
+                <label for="inputText">Enter text for Summarization</label>
+                <br>
+                <textarea id="inputText" name="inputText" rows="4" cols="50"
+                    placeholder="Enter your text here..."></textarea>
+                <br>
+                <input type="submit" value="Generate">
+            </form>
+        </div>
+        <br>
+        <!-- Output Block -->
+        <div id="paragraph-block">
+            {% if output_text %}
+            <h2>Output</h2>
+            <p>{{ output_text }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <br>
+    <script>
+        function closeApp() {
+            window.location.href = "http://localhost:5000/close";
+        }
+    </script>
+</body>
+
+</html>
