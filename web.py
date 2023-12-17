@@ -17,13 +17,13 @@ def process_text(input_text):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('docs/index.html')  # Updated path
 
 @app.route('/process', methods=['POST'])
 def process():
     input_text = request.form['inputText']
     processed_text = process_text('Text: ' + input_text)
-    return render_template('index.html', input_text=input_text, output_text=processed_text)
+    return render_template('docs/index.html', input_text=input_text, output_text=processed_text)  # Updated path
 
 if __name__ == '__main__':
     app.run(debug=True)
