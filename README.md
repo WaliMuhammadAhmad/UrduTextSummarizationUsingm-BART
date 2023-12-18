@@ -19,26 +19,10 @@ This repository contains:
 - **Web App:** A Flask web application for easy text summarization. Run the app locally and get summaries in a snap.
 
 
-## Project Structure:
+## App Preview:
 
-Urdu-Text-Summarization/
-│
-├── Checkpoints/
-│ ├── finetunedmBartLarge67kWith50news147Scripts
-│     ├── ...
-│
-├── Notebook/
-│ ├── notebook4summarization.ipynb
-│
-├── requirements.txt
-|
-├── Flask App/
-│ ├── templates/
-│ │ ├── index.html
-| | ├── favicon.ico
-│ ├── web.py
-│
-
+- You can see the preview of the app <a href="https://walimuhammadahmad.github.io/UrduTextSummarizationUsingm-BART/">here</a>.
+- THis is just the preview, so the model won't work and the output maybe None or Code preview.
 
 ## 🚀 Getting Started
 
