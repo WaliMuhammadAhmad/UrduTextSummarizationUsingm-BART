@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urdu Text Summarization</title>
+    <meta name="description"
+        content="An AI-powered tool for summarizing Urdu text. Developed by Labeeb Tariq and Wali Muhammad Ahmad.">
+    <meta name="keywords" content="Urdu text summarization, AI summarization, NLP, Urdu NLP, summarization tool">
+    <meta name="author" content="Labeeb Tariq, Wali Muhammad Ahmad">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <h1>Urdu Text Summarization</h1>
+            <button class="btn" aria-label="Quit application">Quit</button>
+        </nav>
+    </header>
+
+    <main id="main-container">
+        <section id="project-info" aria-labelledby="project-info-heading">
+            <div class="inline">
+                <p>Developed by:</p>
+                <h2 id="project-info-heading">Muhammad Labeeb Tariq & Wali M. Ahmad</h2>
+            </div>
+        </section>
+
+        <!-- Input Block -->
+        <section id="paragraph-block" aria-labelledby="input-block-heading">
+            <form action="/process" method="post">
+                <label for="inputText">Enter text for Summarization</label>
+                <br>
+                <textarea id="inputText" name="inputText" rows="4" cols="50" placeholder="Enter your text here..."
+                    aria-label="Input text for summarization" required></textarea>
+                <br>
+                <input type="submit" value="Generate" aria-label="Generate summary">
+            </form>
+        </section>
+
+        <br>
+
+        <!-- Output Block -->
+        <section id="paragraph-block" aria-labelledby="output-block-heading">
+            <h2 id="output-block-heading">Output</h2>
+            {% if output_text %}
+            <p>{{ output_text }}</p>
+            {% else %}
+            <p>Summarized text will appear here...</p>
+            {% endif %}
+        </section>
+    </main>
+
+</body>
+
+</html>

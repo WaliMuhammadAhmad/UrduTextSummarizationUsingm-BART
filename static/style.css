@@ -1,0 +1,111 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #20232a;
+  color: #61dafb;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #282c34;
+  padding: 1em;
+}
+
+nav h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+}
+
+h1 {
+  color: #61dafb;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+.inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+#project-info {
+  text-align: center;
+}
+
+#paragraph-block {
+  width: 80%;
+  padding: 1em;
+  margin-top: 1em;
+  background-color: #282c34;
+  border: 2px solid #61dafb;
+  border-radius: 10px;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.btn {
+  background-color: #282c34;
+  color: #61dafb;
+  padding: 0.5em 1em;
+  border: 2px solid #61dafb;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn:hover {
+  background-color: #61dafb;
+  color: #282c34;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 16px;
+  color: #61dafb;
+}
+
+textarea {
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #61dafb;
+  border-radius: 5px;
+  resize: none;
+}
+
+input[type="submit"] {
+  background-color: #20232a;
+  color: #61dafb;
+  padding: 10px 20px;
+  border: 2px solid #61dafb;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #61dafb;
+  color: #20232a;
+}
